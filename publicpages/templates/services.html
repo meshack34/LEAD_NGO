@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>What We Offer - TechAkili Technologies</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/services.css' %}">
+        <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+    </head>
+    <body>
+
+        <!-- Header and Navigation -->
+        {% include 'header.html' %}
+        
+        <!-- Transforming Digital Education & Innovation Section -->
+        <section id="transforming-education" class="offer-section py-5">
+            <div class="container text-center">
+                <h1>Transforming Digital Education &amp Innovation</h1>
+                <p class="lead">
+                    Empowering learners and organizations to harness the power of technology for growth and success.
+                </p>
+            </div>
+        </section>
+
+        <!-- Educational Solutions Section -->
+        <section id="educational-solutions" class="educational-solutions py-5" style="background-image: url('{% static 'images/t.png' %}');">
+            <div class="container">
+                <h2 class="text-center mb-4 section-title">Educational Solutions</h2>
+                <p class="text-center section-subtitle">
+                    Bridging the gap between learners and emerging technologies with hands-on experience.
+                </p>
+                <div class="row justify-content-center">
+                    <!-- Card 1 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="offer-card">
+                            <img src="{% static 'images/t.png' %}" class="offer-img" alt="Interactive Courses">
+                            <h4 class="offer-title">Interactive Courses</h4>
+                            <p class="offer-text">
+                                Explore <b>Cloud Computing, Cybersecurity, AI, Networking, and Software Engineering</b>.
+                            </p>
+                            <a href="{% url 'courses' %}" class="offer-link">Enroll Now →</a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="offer-card">
+                            <img src="{% static 'images/t.png' %}" class="offer-img" alt="Hands-On Labs">
+                            <h4 class="offer-title">Hands-On Labs</h4>
+                            <p class="offer-text">
+                                Gain real-world experience through simulated lab environments that mimic real job scenarios.
+                            </p>
+                            <a href="{% url 'courses' %}" class="offer-link">Try Our Labs →</a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="offer-card">
+                            <img src="{% static 'images/t.png' %}" class="offer-img" alt="AI-Powered Learning">
+                            <h4 class="offer-title">AI-Powered Learning</h4>
+                            <p class="offer-text">
+                                AI-driven dashboards personalize learning, assessments, and progress tracking.
+                            </p>
+                            <a href="{% url 'courses' %}" class="offer-link">Discover AI Learning →</a>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="offer-card">
+                            <img src="{% static 'images/t.png' %}" class="offer-img" alt="Expert Mentorship">
+                            <h4 class="offer-title">Expert-Led Mentorship</h4>
+                            <p class="offer-text">
+                                Learn from industry professionals through live sessions and mentorship programs.
+                            </p>
+                            <a href="{% url 'courses' %}" class="offer-link">Join Mentorship →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Software Development Section -->
+<!-- Custom Software Development Section -->
+<section id="custom-software" class="custom-software py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Software Development Services</h2>
+        <p class="text-center">
+            We build scalable, secure, and cutting-edge software solutions to drive business innovation.
+        </p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="End-to-End Development">
+                    <div class="card-body">
+                        <h4 class="card-title">End-to-End Development</h4>
+                        <p class="card-text">
+                            From idea to execution, our team handles everything—**UI/UX design, backend development, deployment, and maintenance**.
+                            Whether you need a web app, mobile app, or enterprise software, we create tailored solutions.
+                        </p>
+                        <a href="{% url 'courses' %}" class="custom-btn">See Our Work</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="Business Solutions">
+                    <div class="card-body">
+                        <h4 class="card-title">Business Solutions</h4>
+                        <p class="card-text">
+                            Transform your business with **custom CRM systems, ERP solutions, and AI-powered automation**. 
+                            Our software is designed to optimize processes, enhance productivity, and improve decision-making.
+                        </p>
+                        <a href="{% url 'courses' %}" class="custom-btn">Explore Business Solutions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="Agile Collaboration">
+                    <div class="card-body">
+                        <h4 class="card-title">Agile Collaboration</h4>
+                        <p class="card-text">
+                            Our **Agile development approach** ensures flexibility and efficiency. We involve clients at every stage, 
+                            from wireframing to final testing, ensuring the software aligns with their vision.
+                        </p>
+                        <a href="{% url 'courses' %}" class="custom-btn">Learn About Agile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tech & AI Consulting Section -->
+<section id="ai-consulting" class="ai-consulting py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Tech & AI Consulting</h2>
+        <p class="text-center">
+            Guiding organizations through digital transformation with AI-driven insights and strategic planning.
+        </p>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/consultation.png' %}" class="card-img-top" alt="AI Strategy & Implementation">
+                    <div class="card-body">
+                        <h4 class="card-title">AI Strategy & Implementation</h4>
+                        <p class="card-text">
+                            We help businesses integrate AI solutions, from **predictive analytics to automation**, ensuring efficiency and competitive advantage.
+                        </p>
+                        <a href="{% url 'courses' %}" class="custom-btn">AI Strategy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/consultation.png' %}" class="card-img-top" alt="Data Science & Business Intelligence">
+                    <div class="card-body">
+                        <h4 class="card-title">Data Science &amp Business Intelligence</h4>
+                        <p class="card-text">
+                            We analyze complex datasets to uncover actionable insights, **optimize decision-making, and enhance business growth**.
+                        </p>
+                        <a href="{% url 'courses' %}" class="custom-btn">Explore Data Science</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Call to Action Section -->
+<section id="cta-section" class="cta-section py-5 text-white text-center" style="background-color: #436976;">
+    <div class="container">
+        <h2>Empower Your Future with TechAkili Solutions</h2>
+        <p>
+            Take the first step toward achieving your goals with our digital education and custom software solutions.
+        </p>
+        <a href="{% url 'courses' %}" class="custom-cta-btn mx-3">Enroll Now</a>
+        <a href="{% url 'contact' %}" class="custom-cta-btn mx-3">Contact Us</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="footer py-2" style="background-color: #034757;">
+    <div class="container text-center">
+        <p>&copy; 2025 TechAkili Technologies. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/static' %}"></script>
+    </body>
+</html>
