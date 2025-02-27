@@ -149,7 +149,7 @@ header {
     }
 
     .navbar-nav .nav-link {
-        color: #32758c; !important; /* Ensure text is visible */
+        color: #32758c !important; 
         display: block;
         padding: 10px;
         font-size: 1.1rem;
