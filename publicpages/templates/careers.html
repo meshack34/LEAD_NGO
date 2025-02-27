@@ -1,10 +1,19 @@
+{% extends 'base.html' %}
 {% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers - TechAkili Technologies</title>
+    <title>Careers -  LEAD NGO</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -17,7 +26,7 @@
 {% include 'header.html' %}
 <!-- Careers Section -->
 <section class="container mt-5">
-    <h1 class="text-center">Careers at TechAkili</h1>
+    <h1 class="text-center">Careers LEAD NGO</h1>
     <p class="text-center">Explore internship and attachment opportunities.</p>
 
     <div class="row text-center mt-4">
@@ -45,3 +54,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+{% endblock %}
