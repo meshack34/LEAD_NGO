@@ -7,6 +7,10 @@ from .views import login_view
 from .views import enroll
 from .views import submit_partnership
 
+from django.urls import path
+from .views import *
+from . import views
+
 
  
 
@@ -43,5 +47,8 @@ urlpatterns = [
     path('forgot-password/', views.forgot_password_view, name='forgot_password'),
     path("enroll/", enroll, name="enroll"),
     path('submit-partnership/', submit_partnership, name='submit_partnership'),
+    path("donate/", views.donate, name="donate"),
+    path("donate/success/", views.donate_success, name="donate_success"),
+    path("donate/cancel/", views.donate_cancel, name="donate_cancel"),
 
 ]

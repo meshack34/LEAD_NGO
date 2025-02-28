@@ -39,21 +39,11 @@
                     </li>
 
                     <!-- Services Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if '/services' in request.path %}active{% endif %}" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            What We Offer
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="{% url 'services' %}">All Services</a></li>
-                            <li><a class="dropdown-item" href="{% url 'training_and_workshops' %}">Training &amp Workshops</a></li>
-                            <li><a class="dropdown-item" href="{% url 'consulting' %}">impact</a></li>
-                        </ul>
-                    </li>
 
                     {% comment %} <li class="nav-item"><a class="nav-link {% if '/courses' in request.path %}active{% endif %}" href="{% url 'courses' %}">Academy</a></li> {% endcomment %}
                     <li class="nav-item"><a class="nav-link {% if '/partners' in request.path %}active{% endif %}" href="{% url 'partners' %}">Partner With Us</a></li>
                     <li class="nav-item"><a class="nav-link {% if '/contact' in request.path %}active{% endif %}" href="{% url 'contact' %}">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link {% if '/careers' in request.path %}active{% endif %}" href="{% url 'careers' %}">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link {% if '/donate' in request.path %}active{% endif %}" href="{% url 'donate' %}">Donate</a></li>
                     <!-- Careers Dropdown -->
                     {% comment %} <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {% if '/careers' in request.path %}active{% endif %}" href="#" id="careersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

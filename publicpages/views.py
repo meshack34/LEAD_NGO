@@ -143,7 +143,7 @@ def enroll(request):
             enrollment = form.save()
 
             # Send Confirmation Email
-            subject = "Enrollment Confirmation - TechAkili Technologies"
+            subject = "Enrollment Confirmation "
             message = f"Hello {enrollment.name},\n\nThank you for enrolling in {enrollment.course}!\nWe will reach out soon with further details.\n\nBest,\nTechAkili Technologies"
             recipient = [enrollment.email]
 
@@ -217,3 +217,56 @@ def contact_form_submission(request):
     return JsonResponse({'success': False, 'message': 'Invalid request'}, status=400)
 
 
+# views.py
+
+from django.shortcuts import render, redirect
+from paypalrestsdk import Payment
+import paypalrestsdk
+from django.conf import settings
+from django.shortcuts import render, redirect
+
+# Configure PayPal SDK
+paypalrestsdk.configure({
+    "mode": settings.PAYPAL_MODE,  # "sandbox" or "live"
+    "client_id": settings.PAYPAL_CLIENT_ID,
+    "client_secret": settings.PAYPAL_CLIENT_SECRET,
+})
+
+def donate(request):
+    if request.method == "POST":
+        amount = request.POST.get("amount")
+
+        payment = paypalrestsdk.Payment({
+            "intent": "sale",
+            "payer": {
+                "payment_method": "paypal"
+            },
+            "redirect_urls": {
+                "return_url": "http://127.0.0.1:8000/donate/success/",
+                "cancel_url": "http://127.0.0.1:8000/donate/cancel/"
+            },
+            "transactions": [{
+                "amount": {
+                    "total": amount,
+                    "currency": "USD"
+                },
+                "description": "Donation to support our cause."
+            }]
+        })
+
+        if payment.create():
+            for link in payment.links:
+                if link.rel == "approval_url":
+                    return redirect(link.href)  # Redirect user to PayPal
+
+        return render(request, "donate.html", {"error": "Error processing payment"})
+
+    return render(request, "donate.html")
+
+
+def donate_success(request):
+    return render(request, "success.html")
+
+
+def donate_cancel(request):
+    return render(request, "cancel.html")
