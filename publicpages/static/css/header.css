@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #32758c;
+    --primary-color: #03c119;
     --secondary-color: #dbf2fa;
     --light-blue-1: #dcf3fb;
     --light-blue-2: #ddf3fb;
@@ -149,7 +149,7 @@ header {
     }
 
     .navbar-nav .nav-link {
-        color: #32758c !important; 
+        color: #03c119 !important; 
         display: block;
         padding: 10px;
         font-size: 1.1rem;

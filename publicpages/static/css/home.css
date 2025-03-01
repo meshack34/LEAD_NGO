@@ -106,8 +106,8 @@ body {
     font-size: 3.5rem;  
     font-weight: 400;   
     text-transform: uppercase; 
-    color: #08527a;   
-    text-shadow: 0 0 10px rgba(0, 255, 238, 0.8), 0 0 20px rgba(255, 159, 0, 0.6);
+    color: #074b18;   
+    text-shadow: 0 0 10px (#03c119), 0 0 20px rgba(255, 159, 0, 0.6);
     letter-spacing: 2px; /* Adds spacing for a professional look */
 }
 

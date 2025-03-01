@@ -17,7 +17,7 @@
 }
 
 h1, h2, h3, h4 {
-    color: #137cb9;
+    color: #03c119;
 }
 /* Header & Navigation */
 .navbar {
@@ -107,7 +107,7 @@ h1, h2, h3, h4 {
 
 /* Careers Section */
 .careers-section {
-    background-color: #09569e;
+    background-color: #03c119;
     padding: 50px 20px;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(5, 67, 121, 0.1);
@@ -134,7 +134,7 @@ h1, h2, h3, h4 {
 }
 
 .career-item {
-    background: #0d78c5;
+    background: #03c119;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
@@ -144,7 +144,7 @@ h1, h2, h3, h4 {
 }
 
 .career-item:hover {
-    background: #0e6dbb;
+    background: #03c119;
 }
 
 .career-item h4 {
@@ -160,7 +160,7 @@ h1, h2, h3, h4 {
 /* Application Button */
 .apply-btn {
     display: inline-block;
-    background: #007bff;
+    background: #03c119;
     color: #1883b4;
     padding: 12px 20px;
     border-radius: 5px;
