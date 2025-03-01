@@ -6,24 +6,23 @@
 {% block content %}
 
 
-{% load static %}
 <link rel="stylesheet" href="{% static 'css/ourmission.css' %}">
 <link rel="stylesheet" href="{% static 'css/header.css' %}">
 
-{% block content %}
 {% include 'header.html' %}
 
 <!-- Hero Section -->
 <!-- Hero Section (Now Displays Mission Statement) -->
 <section class="hero-section">
     <div class="container text-center">
-        <h2 class="section-title">Our Mission</h2>
-        <p class="section-description">To empower individuals and organizations by bridging the digital skills gap through AI-powered learning and software solutions.</p>
+        <h2 class="section-title">Our Mission</h2>     
+        <p class="section-description">To empower communities through the provision of sustainable innovative technologies,</p>
+        <p class="section-description">To access to health care and education for improved food security, alleviate poverty, and social injustice.</p>
 
         <!-- Embedded YouTube Video -->
         <div class="video-container">
             <iframe 
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                <source src="https://www.youtube.com/watch?v=TqhNILVX8IE.mp4" type="video/mp4">
                 title="LEAD NGO Introduction" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -49,8 +48,8 @@
             <!-- Text content on the right -->
             <div class="col-md-6">
                 <h2 class="section-title">Our Vision</h2>
-                <p class="section-description">A future where every learner and business harnesses technology to thrive.</p>
-                <p class="quote fst-italic">"Technology and AI are not just tools; they are the bridges that connect innovation with opportunity." – Anonymous</p>
+                <p class="section-description">To be the leading NGO in the provision of innovative sustainable technologies.</p>
+                <p class="quote fst-italic">Promote ICT and access to health care and education to enhance rural development.</p>
             </div>
         </div>
     </div>
@@ -89,7 +88,7 @@
 <!-- Community Charter Section -->
 <section id="community-charter" class="community-charter py-5">
     <div class="container">
-        <h2 class="section-title"> LEAD FOUNDATION </h2>
+        <h2 class="section-title"> LEAD ORGANIZATION </h2>
         <p class="section-description">Our commitment to fostering a thriving and inclusive tech community.</p>
         <div class="charter-content">
             <h3>1. Inclusivity &amp Diversity</h3>
@@ -97,7 +96,7 @@
             <h3>4. Collaboration Over Competition</h3>
             <p>We encourage open-source contributions, knowledge sharing, and mentorship to drive collective progress.</p>
             <h3>5. Sustainability &amp Social Impact</h3>
-            <p>LEAD FOUNDATION is dedicated to creating solutions that contribute positively to environmental sustainability and societal well-being.</p>
+            <p>LEAD ORGANIZATION is dedicated to creating solutions that contribute positively to environmental sustainability and societal well-being.</p>
         </div>
     </div>
 </section>

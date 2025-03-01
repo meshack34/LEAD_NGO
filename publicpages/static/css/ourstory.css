@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #32758c;
+    --primary-color: #295c2f;
     --secondary-color: #dbf2fa;
     --light-blue-1: #dcf3fb;
     --light-blue-2: #ddf3fb;
@@ -11,7 +11,7 @@
 
 /* Global Styles */
 body {
-    background-color: var(--light-blue-3);
+    background-color: var(--primary-color--);
     color: var(--primary-color);
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -149,7 +149,7 @@ header {
     }
 
     .navbar-nav .nav-link {
-        color: #32758c; !important; /* Ensure text is visible */
+        color: #257e3b !important; /* Ensure text is visible */
         display: block;
         padding: 10px;
         font-size: 1.1rem;

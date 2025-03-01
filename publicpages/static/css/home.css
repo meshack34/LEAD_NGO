@@ -1,6 +1,6 @@
 /* Define Global Variables */
 :root {
-    --primary-color: #03c119;
+    --primary-color: #142710;
     --secondary-color: #dbf2fa;
     --light-blue-1: #dcf3fb;
     --light-blue-2: #ddf3fb;
@@ -106,8 +106,8 @@ body {
     font-size: 3.5rem;  
     font-weight: 400;   
     text-transform: uppercase; 
-    color: #074b18;   
-    text-shadow: 0 0 10px (#03c119), 0 0 20px rgba(255, 159, 0, 0.6);
+    color: #257e3b;   
+    text-shadow: 0 0 10px , 0 0 20px rgba(255, 159, 0, 0.6);
     letter-spacing: 2px; /* Adds spacing for a professional look */
 }
 

@@ -36,23 +36,7 @@
             <h1>Empowering Communities for a Sustainable Future</h1>
             <p>At LEAD, we promote food security, youth in agriculture, education, and economic empowerment to uplift rural communities.</p>
 
-            <!-- Images Displayed in Two-Column Layout -->
-
-            {% comment %} <div class="image-grid mt-4">
-                <div class="image-item">
-                    <img src="{% static 'images/r1.jpg' %}" alt="Community Training" class="hero-img">
-                </div>
-                <div class="image-item">
-                    <img src="{% static 'images/r2.jpg' %}" alt="Youth in Agriculture" class="hero-img">
-                </div>
-                <div class="image-item">
-                    <img src="{% static 'images/r3.jpg' %}" alt="Education Support" class="hero-img">
-                </div>
-                <div class="image-item">
-                    <img src="{% static 'images/r4.jpg' %}" alt="Sustainable Farming" class="hero-img">
-                </div>
-            </div>
-             {% endcomment %}
+            
 
             <div class="image-grid mt-4">
                 <div class="image-item">
@@ -75,47 +59,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Introduction -->
-    <section class="introduction text-center" id="about">
-        <div class="container">
-            <p><strong>LEAD IN EMPOWERMENT FOR ACCELERATED DEVELOPMENT (LEAD)</strong> is a non-profit organization dedicated to transforming rural communities through innovative and sustainable solutions. We work to alleviate poverty, improve food security, provide access to education, and empower youth in agriculture.</p>
-        </div>
-
-<!-- Vision, Mission, and Objectives Section -->
-<section class="py-5" style="background-color: #f4f4f4;">
-    <div class="container-fluid p-0">
-        <div class="row">
-            
-            <!-- Vision -->
-            <div class="col-md-4">
-                <div class="p-4 text-white text-center border border-white" style="background-color: #4d4d4d;">
-                    <h3 class="fw-bold">VISION</h3>
-                    <p>To be the leading NGO in the provision of innovative sustainable technologies.</p>
-                    <p>Promote ICT and access to health care and education to enhance rural development.</p>
-                </div>
-            </div>
-            
-            <!-- Mission -->
-            <div class="col-md-4">
-                <div class="p-4 text-white text-center border border-white" style="background-color: #2b8ccd;">
-                    <h3 class="fw-bold">MISSION</h3>
-                    <p>To empower communities through the provision of sustainable innovative technologies,</p>
-                    <p>access to health care and education for improved food security, alleviate poverty, and social injustice.</p>
-                </div>
-            </div>
-            
-            <!-- Aims and Main Objectives -->
-            <div class="col-md-4">
-                <div class="p-4 text-light text-center border border-white" style="background-color: #8B0000;">
-                    <h3 class="fw-bold">AIMS AND MAIN OBJECTIVES</h3>
-                    <p>To alleviate poverty, promote ICT, access to health care, education, and improve both food security and welfare.</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
 
 
                         
@@ -151,11 +94,12 @@
 </section>
 
 <!-- Final CTA -->
-<section class="final-cta text-center">
-    <h2>Join Our Community of Digital Innovators</h2>
+{% comment %} <section class="newpage">
+    <h2>Join Our Community </h2>
     <a href="{% url 'courses' %}" class="btn btn-primary">Enroll Now</a>
     <a href="{% url 'contact' %}" class="btn btn-outline-dark">Reach Us</a>
-</section>
+</section> {% endcomment %}
+
 
 <style>
     .testimonial-content {
@@ -163,7 +107,18 @@
         margin: auto;
         padding: 20px;
     }
-
+    .newpage.btn{
+        text-align: center;
+        padding: 20px;
+        background-color:rgb(77, 189, 73);
+        color: white;
+    }
+     .newpage{
+        text-align: center;
+        padding: 20px;
+        background-color:rgb(77, 189, 73);
+        color: white;
+    }
     .testimonial-content img {
         width: 100px;
         height: 100px;
