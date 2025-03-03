@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #142710;
+    --primary-color: #32758c;
     --secondary-color: #dbf2fa;
     --light-blue-1: #dcf3fb;
     --light-blue-2: #ddf3fb;
@@ -286,7 +286,15 @@ header {
 
 
 /* Educational Solutions Section */
-
+.educational-solutions {
+    position: relative;
+    text-align: center;
+    background-image: url('{% static 'images/t.png' %}');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    color: white;
+}
 
 /* Educational Solutions Section */
 .educational-solutions {

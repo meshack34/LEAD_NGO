@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding-top: 80px; /* Prevent header overlap */
     box-sizing: border-box;
-    background-color: #142710;
+    background-color: #e3f7ff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;

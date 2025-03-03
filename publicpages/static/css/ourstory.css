@@ -11,7 +11,7 @@
 
 /* Global Styles */
 body {
-    background-color: var(--primary-color--);
+    background-color: var(--light-blue-3);
     color: var(--primary-color);
     font-family: 'Arial', sans-serif;
     margin: 0;
