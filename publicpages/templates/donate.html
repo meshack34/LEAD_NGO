@@ -65,8 +65,25 @@
                                       <input type="hidden" id="amount" name="amount" value="50">
                                       <button type="submit" class="donate-btn">Donate once</button>
                                   </form>
-                              </div>
-                          </div>
+
+                                  <!-- Donation Button -->
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" id="donation-type" name="donation_type" value="once">
+    <input type="hidden" id="amount" name="amount" value="50">
+    <button type="submit" class="donate-btn">Donate once</button>
+</form>
+
+<!-- Bank Details Section -->
+<div class="bank-details">
+    <h3>LEAD ORGANIZATION BANK DETAILS</h3>
+    <p><strong>BANK:</strong> COOPERATIVE BANK OF KENYA</p>
+    <p><strong>BRANCH:</strong> LITEIN</p>
+    <p><strong>ACCOUNT NAME:</strong> LEAD IN EMPOWERNMENT FOR ACCELERATED DEVELOPMENT</p>
+    <p><strong>ACCOUNT NUMBER:</strong> 01100260548001</p>
+</div>
+</div>
+</div>
 
             
 
@@ -170,6 +187,24 @@
                .donate-btn:hover {
                    background: #e0a300;
                }
+               .bank-details {
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 8px;
+                background: #f8f9fa;
+                text-align: center;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .bank-details h3 {
+                color: #004d00;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+        
+
 </style>
 
 <script>
