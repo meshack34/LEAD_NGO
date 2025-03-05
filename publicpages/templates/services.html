@@ -13,7 +13,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>What We Offer - LEAD NGO Technologies</title>
+        <title>PROJECTS</title>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -28,9 +28,9 @@
         <!-- Transforming Digital Education & Innovation Section -->
         <section id="transforming-education" class="offer-section py-5">
             <div class="container text-center">
-                <h1>Transforming Digital Education &amp Innovation</h1>
+                <h1>PROJECTS</h1>
                 <p class="lead">
-                    Empowering learners and organizations to harness the power of technology for growth and success.
+                    Empowering to harness the power of technology for growth and success.
                 </p>
             </div>
         </section>
@@ -38,9 +38,12 @@
         <!-- Educational Solutions Section -->
         <section id="educational-solutions" class="educational-solutions py-5" style="background-image: url('{% static 'images/t.png' %}');">
             <div class="container">
-                <h2 class="text-center mb-4 section-title">Educational Solutions</h2>
+                <h2 class="text-center mb-4 section-title">1.0 CAPACITY BUILDING</h2>
                 <p class="text-center section-subtitle">
-                    Bridging the gap between learners and emerging technologies with hands-on experience.
+                    LEAD expedites acquisition of innovative knowledge and skills by rural communities for effective involvement in live hood Projects. 
+                    This is done through periodical training of farmers Groups.
+We boast of a team of dedicated experienced Agriculture, Livestock and Community Development specialist with 
+requisite knowledge and skills to offer capacity building to help farmers, entrepreurs, stakeholders and actors improve their operations, increase their productivity and maximize Profitability.
                 </p>
                 <div class="row justify-content-center">
                     <!-- Card 1 -->
@@ -51,7 +54,7 @@
                             <p class="offer-text">
                                 Explore <b>Cloud Computing, Cybersecurity, AI, Networking, and Software Engineering</b>.
                             </p>
-                            <a href="{% url 'courses' %}" class="offer-link">Enroll Now →</a>
+                            {% comment %} <a href="{% url 'courses' %}" class="offer-link">Enroll Now →</a> {% endcomment %}
                         </div>
                     </div>
                     <!-- Card 2 -->
@@ -62,7 +65,7 @@
                             <p class="offer-text">
                                 Gain real-world experience through simulated lab environments that mimic real job scenarios.
                             </p>
-                            <a href="{% url 'courses' %}" class="offer-link">Try Our Labs →</a>
+                            {% comment %} <a href="{% url 'courses' %}" class="offer-link">Try Our Labs →</a> {% endcomment %}
                         </div>
                     </div>
                     <!-- Card 3 -->
@@ -95,21 +98,24 @@
 <!-- Custom Software Development Section -->
 <section id="custom-software" class="custom-software py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Software Development Services</h2>
+        <h2 class="text-center mb-4">2.0 LIVELIHOOD PROJECTS/TIMPS </h2>
         <p class="text-center">
-            We build scalable, secure, and cutting-edge software solutions to drive business innovation.
+            These are Income Generation activities that members can invest to Improve their standard of living. 
+            LEAD encourages its member's to invest in such projects through adoption of innovative technologies. 
+            Leads targets Vulnerable and Marginalized Groups through supporting with Inputs and materials to increase productivity through adoption of Technologies, Innovations and Management Practices (TIMPs). 
+            LEAD has prioritized and promotes the following livelihood Projects
         </p>
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="End-to-End Development">
                     <div class="card-body">
-                        <h4 class="card-title">End-to-End Development</h4>
+                        <h4 class="card-title">DAIRY PRODUCTIONS (10 LITRE MILK PROJECT)</h4>
                         <p class="card-text">
                             From idea to execution, our team handles everything—**UI/UX design, backend development, deployment, and maintenance**.
                             Whether you need a web app, mobile app, or enterprise software, we create tailored solutions.
                         </p>
-                        <a href="{% url 'courses' %}" class="custom-btn">See Our Work</a>
+                        {% comment %} <a href="{% url 'courses' %}" class="custom-btn">See Our Work</a> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -117,12 +123,13 @@
                 <div class="card">
                     <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="Business Solutions">
                     <div class="card-body">
-                        <h4 class="card-title">Business Solutions</h4>
+                        <h4 class="card-title">INDIGENOUS CHICKEN PRODUCTION</h4>
                         <p class="card-text">
-                            Transform your business with **custom CRM systems, ERP solutions, and AI-powered automation**. 
-                            Our software is designed to optimize processes, enhance productivity, and improve decision-making.
+                            Focusing on source of improved day old chicks, brooding, Feeds and Feeding, Feed formulations, Hatching, Pests and Disease 
+                            Management, Housing.
+                            Target Group Is Vulnerable and Marginalized Groups including Youth who are resource poor.
                         </p>
-                        <a href="{% url 'courses' %}" class="custom-btn">Explore Business Solutions</a>
+                        {% comment %} <a href="{% url 'courses' %}" class="custom-btn">Explore Business Solutions</a> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -130,12 +137,12 @@
                 <div class="card">
                     <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="Agile Collaboration">
                     <div class="card-body">
-                        <h4 class="card-title">Agile Collaboration</h4>
+                        <h4 class="card-title">INDIGENOUS CHICKEN PRODUCTION</h4>
                         <p class="card-text">
-                            Our **Agile development approach** ensures flexibility and efficiency. We involve clients at every stage, 
-                            from wireframing to final testing, ensuring the software aligns with their vision.
+                            The objective is to promote high value Crops that Include Avocados, passion     
+        fruits, Carrots, Beetroots etc.
                         </p>
-                        <a href="{% url 'courses' %}" class="custom-btn">Learn About Agile</a>
+                        {% comment %} <a href="{% url 'courses' %}" class="custom-btn">Learn About Agile</a> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -146,19 +153,21 @@
 <!-- Tech & AI Consulting Section -->
 <section id="ai-consulting" class="ai-consulting py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-4">Tech & AI Consulting</h2>
+        <h2 class="text-center mb-4">D.AFRICAN LEAFY VEGETABLES(ALV) </h2>
         <p class="text-center">
-            Guiding organizations through digital transformation with AI-driven insights and strategic planning.
-        </p>
+            Due to the demand of Organically grown leafy vegetables our focus is to train the Groups on Technologies, 
+            innovation and Management Practices that increase productivity of African Leafy Vegetables. Crops Prioritized include Amaranths, Spider plant, 
+            Pumpkins, Black night shade etc.</p>
         <div class="row">
             <div class="col-md-6 mb-4">
                 <div class="card">
                     <img src="{% static 'images/consultation.png' %}" class="card-img-top" alt="AI Strategy & Implementation">
                     <div class="card-body">
-                        <h4 class="card-title">AI Strategy & Implementation</h4>
+                        <h4 class="card-title">DAIRY GOATS PRODUCTION.</h4>
                         <p class="card-text">
-                            We help businesses integrate AI solutions, from **predictive analytics to automation**, ensuring efficiency and competitive advantage.
-                        </p>
+                             
+                            Dairy Production is ideal for small holder farmers. Focus has been on modern housing structures, breeds and breeding, 
+                            Feeds and Feeding, pests and Disease control.</p>
                         <a href="{% url 'courses' %}" class="custom-btn">AI Strategy</a>
                     </div>
                 </div>
@@ -167,7 +176,7 @@
                 <div class="card">
                     <img src="{% static 'images/consultation.png' %}" class="card-img-top" alt="Data Science & Business Intelligence">
                     <div class="card-body">
-                        <h4 class="card-title">Data Science &amp Business Intelligence</h4>
+                        <h4 class="card-title">3.0 FOOD SECURITY INITIATIVES –ZERO HUNGER</h4>
                         <p class="card-text">
                             We analyze complex datasets to uncover actionable insights, **optimize decision-making, and enhance business growth**.
                         </p>
