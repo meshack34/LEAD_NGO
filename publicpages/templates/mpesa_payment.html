@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}MPesa Payment - LEAD{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="donation-box">
+        <h2>Support Our Cause with MPesa</h2>
+        <p>Your donations help us expand access to financial services worldwide.</p>
+
+        <!-- Toggle Donation Type -->
+        <div class="toggle-container">
+            <button id="one-time-btn" class="toggle-btn active">Give once</button>
+            <button id="monthly-btn" class="toggle-btn">Give monthly</button>
+        </div>
+
+        <!-- Donation Amounts -->
+        <div class="amount-container">
+            <button class="amount-btn" data-amount="100">Ksh 100</button>
+            <button class="amount-btn selected" data-amount="500">Ksh 500</button>
+            <button class="amount-btn" data-amount="1000">Ksh 1000</button>
+            <button class="amount-btn" data-amount="2000">Ksh 2000</button>
+            <button class="amount-btn" data-amount="5000">Ksh 5000</button>
+        </div>
+
+        <!-- Custom Amount -->
+        <input type="number" id="custom-amount" class="custom-input" placeholder="Other amount">
+
+        <!-- Phone Number Input -->
+        <input type="tel" id="phone-number" class="custom-input" placeholder="Enter MPesa Phone Number">
+
+        <!-- Donation Button -->
+        <form method="POST" action="{% url 'stk_push' %}">
+            {% csrf_token %}
+            <input type="hidden" id="donation-type" name="donation_type" value="once">
+            <input type="hidden" id="amount" name="amount" value="500">
+            <input type="hidden" id="phone" name="phone" value="">
+            <button type="submit" class="donate-btn">Donate via MPesa</button>
+        </form>
+    </div>
+</div>
+
+
+<style>
+               .container {
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                  
+               }
+               .donation-box {
+                   background: white;
+                   padding: 30px;
+                   border-radius: 10px;
+                   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                   text-align: center;
+                   width: 100%;
+                   max-width: 400px;
+               }
+           
+               .donation-box h2 {
+                   font-size: 18px;
+                   color: #004d00;
+                   font-weight: bold;
+               }
+           
+               .donation-box p {
+                   font-size: 14px;
+                   color: #555;
+                   margin-bottom: 15px;
+               }
+               .toggle-container {
+                   display: flex;
+                   border-radius: 25px;
+                   padding: 5px;
+               }
+           
+               .toggle-btn {
+                   flex: 1;
+                   padding: 10px;
+                   border: none;
+                   border-radius: 20px;
+                   background: transparent;
+                   cursor: pointer;
+                   font-weight: bold;
+               }
+           
+               .toggle-btn.active {
+                   background: #004d00;
+                   color: white;
+               }
+               .amount-container {
+                   display: grid;
+                   grid-template-columns: repeat(2, 1fr);
+                   gap: 10px;
+                   margin-top: 15px;
+               }
+           
+               .amount-btn {
+                   padding: 12px;
+                   border: 2px solid #ccc;
+                   border-radius: 8px;
+                   background: white;
+                   font-size: 16px;
+                   cursor: pointer;
+               }
+           
+               .amount-btn.selected {
+                   border-color: #004d00;
+                   background: #e6f2e6;
+                   font-weight: bold;
+               }
+               .custom-input {
+                   width: 100%;
+                   padding: 10px;
+                   margin-top: 10px;
+                   border: 2px solid #ccc;
+                   border-radius: 8px;
+                   text-align: center;
+                   font-size: 16px;
+               }
+           
+               .donate-btn {
+                   width: 100%;
+                   margin-top: 20px;
+                   padding: 12px;
+                   border: none;
+                   background: #f4b400;
+                   color: white;
+                   font-size: 16px;
+                   font-weight: bold;
+                   border-radius: 8px;
+                   cursor: pointer;
+                   transition: background 0.3s;
+               }
+           
+               .donate-btn:hover {
+                   background: #e0a300;
+               }
+               .bank-details {
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 8px;
+                background: #f8f9fa;
+                text-align: center;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .bank-details h3 {
+                color: #004d00;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+        
+
+</style>
+
+
+<script>
+    document.getElementById("one-time-btn").addEventListener("click", function () {
+        this.classList.add("active");
+        document.getElementById("monthly-btn").classList.remove("active");
+        document.getElementById("donation-type").value = "once";
+    });
+
+    document.getElementById("monthly-btn").addEventListener("click", function () {
+        this.classList.add("active");
+        document.getElementById("one-time-btn").classList.remove("active");
+        document.getElementById("donation-type").value = "monthly";
+    });
+
+    document.querySelectorAll(".amount-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            document.querySelectorAll(".amount-btn").forEach(btn => btn.classList.remove("selected"));
+            this.classList.add("selected");
+            document.getElementById("amount").value = this.dataset.amount;
+        });
+    });
+
+    document.getElementById("custom-amount").addEventListener("input", function () {
+        document.querySelectorAll(".amount-btn").forEach(btn => btn.classList.remove("selected"));
+        document.getElementById("amount").value = this.value;
+    });
+
+    document.getElementById("phone-number").addEventListener("input", function () {
+        document.getElementById("phone").value = this.value;
+    });
+</script>
+{% endblock %}

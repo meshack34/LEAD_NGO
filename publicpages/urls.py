@@ -12,10 +12,17 @@ from .views import *
 from . import views
 
 
- 
-
 
 urlpatterns = [
+    path('mpesa/', views.mpesa_payment, name='mpesa_payment'),
+    path('mpesa/stk_push/', views.stk_push, name='stk_push'),
+    path('mpesa/callback/', views.mpesa_callback, name='mpesa_callback'),
+    
+    path('paypal_donate/', views.paypal_donate, name='paypal_donate'),
+    path('mpesa-donate/', views.mpesa_donate, name='mpesa_donate'),
+    path('donate/', views.donate, name='donate'),
+    
+    path("mpesa/initiate/", views.initiate_mpesa_payment, name="mpesa-initiate"),
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
     path('about/', views.about, name='about'),               
@@ -47,7 +54,6 @@ urlpatterns = [
     path('forgot-password/', views.forgot_password_view, name='forgot_password'),
     path("enroll/", enroll, name="enroll"),
     path('submit-partnership/', submit_partnership, name='submit_partnership'),
-    path("donate/", views.donate, name="donate"),
     path("donate/success/", views.donate_success, name="donate_success"),
     path("donate/cancel/", views.donate_cancel, name="donate_cancel"),
 
