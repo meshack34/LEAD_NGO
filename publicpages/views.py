@@ -274,19 +274,9 @@ def donate_cancel(request):
 from django.shortcuts import render
 from django.http import JsonResponse
 
-def initiate_mpesa_payment(request):
-    if request.method == "POST":
-        phone = request.POST.get("phone")  # User's phone number
-        amount = request.POST.get("amount")  # Donation amount
-
-        response = stk_push(phone, amount)
-        return JsonResponse(response)  # Return M-Pesa STK Push response
-
-    return render(request, "donate.html")
-
 from django.shortcuts import render
 
-def mpesa_donate(request):
+def paypall_donate(request):
     return render(request, 'donate_paypal.html')
 
 def donate(request):

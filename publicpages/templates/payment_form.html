@@ -10,55 +10,138 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
     />
+    <style>
+      body {
+        padding-top: 70px;
+      }
+    </style>
   </head>
-  <body
-    class="d-flex align-items-center justify-content-center vh-100 bg-light"
-  >
+  <body class="bg-light">
     {% load django_bootstrap5 %}
 
-
-    <div class="card shadow-sm p-4" style="width: 100%; max-width: 500px">
-      <h3 class="text-center mb-4">Make Payment</h3>
-
-      <!-- Display Error Message -->
-      {% if error_message %}
-      <div class="alert alert-danger" role="alert">{{ error_message }}</div>
-      {% endif %}
-
-      <!-- Display Success Message -->
-      {% if success_message %}
-      <div class="alert alert-success" role="alert">{{ success_message }}</div>
-      {% endif %}
-
-      <form
-        method="POST"
-        class="needs-validation"
-        novalidate
-        onsubmit="handleFormSubmit(event)"
-      >
-        {% csrf_token %} {% for field in form %}
-        <div class="mb-3">{% bootstrap_field field %}</div>
-        {% endfor %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Payment Portal</a>
         <button
-          type="submit"
-          class="btn btn-success w-100 rounded-pill"
-          id="submitButton"
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
         >
-          <span
-            id="spinner"
-            class="spinner-border spinner-border-sm"
-            role="status"
-            aria-hidden="true"
-            style="display: none"
-          ></span>
-          <span id="buttonText">Pay</span>
+          <span class="navbar-toggler-icon"></span>
         </button>
-      </form>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Transactions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+      <div class="card shadow-sm p-4" style="width: 100%; max-width: 500px">
+        <h3 class="text-center mb-4">Make Payment</h3>
+
+        {% if error_message %}
+        <div class="alert alert-danger">{{ error_message }}</div>
+        {% endif %}
+        {% if success_message %}
+        <div class="alert alert-success">{{ success_message }}</div>
+        {% endif %}
+
+        <form
+          method="POST"
+          class="needs-validation"
+          novalidate
+          onsubmit="handleFormSubmit(event)"
+        >
+          {% csrf_token %}
+
+          <!-- Dropdown for Predefined Amounts -->
+          <div class="mb-3">
+            <label for="amountSelect" class="form-label">Select Amount</label>
+            <select
+              class="form-select"
+              id="amountSelect"
+              onchange="handleAmountChange(this)"
+            >
+              <option value="" selected disabled>Select</option>
+              <option value="10">KES 10</option>
+              <option value="50">KES 50</option>
+              <option value="100">KES 100</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+
+          <!-- Custom Amount Input -->
+          <div class="mb-3">
+            <label for="customAmount" class="form-label">Enter Custom Amount</label>
+            <input
+              type="number"
+              class="form-control"
+              id="customAmount"
+              name="amount"
+              min="1"
+              placeholder="Enter amount"
+              disabled
+              required
+            />
+          </div>
+
+          {% for field in form %}
+          {% if field.name != "amount" %}
+          <div class="mb-3">{% bootstrap_field field %}</div>
+          {% endif %}
+          {% endfor %}
+
+          <button
+            type="submit"
+            class="btn btn-success w-100 rounded-pill"
+            id="submitButton"
+          >
+            <span
+              id="spinner"
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+              style="display: none"
+            ></span>
+            <span id="buttonText">Pay</span>
+          </button>
+        </form>
+      </div>
     </div>
 
-    <!-- Bootstrap JS -->
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+      <p>&copy; 2025 Payment Portal | All Rights Reserved</p>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
+      function handleAmountChange(select) {
+        const customAmountInput = document.getElementById("customAmount");
+
+        if (select.value === "custom") {
+          customAmountInput.disabled = false;
+          customAmountInput.value = "";
+        } else {
+          customAmountInput.disabled = false;
+          customAmountInput.value = select.value;
+        }
+      }
+
       function handleFormSubmit(event) {
         event.preventDefault();
 
@@ -70,7 +153,6 @@
         spinner.style.display = "inline-block";
         submitButton.disabled = true;
 
-        // Submit the form
         event.target.submit();
       }
     </script>

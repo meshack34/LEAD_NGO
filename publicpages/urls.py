@@ -20,10 +20,9 @@ urlpatterns = [
     
     
     path('paypal_donate/', views.paypal_donate, name='paypal_donate'),
-    path('mpesa-donate/', views.mpesa_donate, name='mpesa_donate'),
+    path('mpesa-donate/', views.paypall_donate, name='mpesa_donate'),
     path('donate/', views.donate, name='donate'),
     
-    path("mpesa/initiate/", views.initiate_mpesa_payment, name="mpesa-initiate"),
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
     path('about/', views.about, name='about'),               
