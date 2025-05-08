@@ -25,8 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
+    # 'django.contrib.sites',  # Required for social-auth-app-django
     'publicpages',
     'social_django'
+    
 ]
 
 MIDDLEWARE = [
@@ -152,8 +155,3 @@ PAYPAL_CLIENT_ID = "ATkLED_rdrWQKqEWQteX4mV1CDpTgeJpKOHcFTsDO0D5sVOHEE5I8NvQP3CE
 PAYPAL_CLIENT_SECRET = "ENNnPpE3bP_dyt9QzAqvM6cAttMsLTB7uJS01-OcBJhFqOtceVRIxp1DI2SlzL0-WYSjqN16QKgZv8_k"
 PAYPAL_MODE = "sandbox"  # Change to "live" for real payments
 
-MPESA_ENV = "sandbox"  # Change to "production" when live
-MPESA_ACCESS_TOKEN = "1xZCwGMZc0sydUpveAis1Rq6k6aG"
-MPESA_SHORTCODE = "174379"
-MPESA_PASSKEY = "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzA5MjIw"
-MPESA_CALLBACK_URL = "https://mydomain.com/path"
