@@ -25,7 +25,7 @@
     <div class="container d-flex justify-content-center align-items-center mt-5">
         <div class="toggle-container">
             <a href="{% url 'paypal_donate' %}" class="toggle-btn {% if request.path == '/paypal_donate/' %}active{% endif %}">Donate with PayPal</a>
-            <a href="{% url 'mpesa_payment' %}" class="toggle-btn {% if request.path == '/mpesa-donate/' %}active{% endif %}">Donate with M-Pesa</a>
+            <a href="{% url 'payment' %}" class="toggle-btn {% if request.path == '/payment/' %}active{% endif %}">Donate with M-Pesa</a>
         </div>
     </div>
 </section>

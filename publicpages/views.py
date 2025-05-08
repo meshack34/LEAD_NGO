@@ -273,7 +273,6 @@ def donate_cancel(request):
 
 from django.shortcuts import render
 from django.http import JsonResponse
-from .mpesa_utils import stk_push
 
 def initiate_mpesa_payment(request):
     if request.method == "POST":
@@ -322,64 +321,6 @@ def get_access_token():
         logger.error(f"MPesa Token Error: {e}")
         return None
 
-# Initiate STK Push
-def stk_push(request):
-    if request.method == "POST":
-        phone = request.POST.get("phone")
-        amount = request.POST.get("amount")
-
-        # Ensure phone is formatted correctly
-        if phone.startswith("0"):
-            phone = "254" + phone[1:]
-
-        access_token = get_access_token()
-        if not access_token:
-            return JsonResponse({"error": "Failed to get access token"}, status=500)
-
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-        password = base64.b64encode(f"{BUSINESS_SHORTCODE}{PASSKEY}{timestamp}".encode()).decode()
-
-        payload = {
-            "BusinessShortCode": BUSINESS_SHORTCODE,
-            "Password": password,
-            "Timestamp": timestamp,
-            "TransactionType": "CustomerPayBillOnline",
-            "Amount": amount,
-            "PartyA": phone,
-            "PartyB": BUSINESS_SHORTCODE,
-            "PhoneNumber": phone,
-            "CallBackURL": CALLBACK_URL,
-            "AccountReference": "Test Payment",
-            "TransactionDesc": "Payment for service"
-        }
-
-        headers = {"Authorization": f"Bearer {access_token}", "Content-Type": "application/json"}
-        try:
-            response = requests.post("https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest", json=payload, headers=headers)
-            response.raise_for_status()
-            return JsonResponse(response.json())
-        except requests.exceptions.RequestException as e:
-            logger.error(f"MPesa STK Push Error: {e}")
-            return JsonResponse({"error": "Failed to process request"}, status=500)
-
-    return render(request, "mpesa_payment.html")
-
-# Handle MPesa Callback
-def mpesa_callback(request):
-    if request.method == "POST":
-        data = json.loads(request.body.decode("utf-8"))
-        logger.info(f"MPesa Callback Response: {json.dumps(data, indent=2)}")
-        return JsonResponse({"status": "Received"})
-    return JsonResponse({"error": "Invalid request"}, status=400)
-
-# Render MPesa Payment Page
-def mpesa_payment(request):
-    return render(request, "mpesa_payment.html")
-
-
-
-# ffrom django.shortcuts import render, redirect
-# from django.http import JsonResponse
 
 import requests, base64, json, re, os
 from datetime import datetime

@@ -14,13 +14,10 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.payment_view, name='payment'),
+    path('payment', views.payment_view, name='payment'),
     path('callback/', views.payment_callback, name='payment_callback'),
     path('stk-status/', views.stk_status_view, name='stk_status'),
     
-    path('mpesa/', views.mpesa_payment, name='mpesa_payment'),
-    path('mpesa/stk_push/', views.stk_push, name='stk_push'),
-    path('mpesa/callback/', views.mpesa_callback, name='mpesa_callback'),
     
     path('paypal_donate/', views.paypal_donate, name='paypal_donate'),
     path('mpesa-donate/', views.mpesa_donate, name='mpesa_donate'),
